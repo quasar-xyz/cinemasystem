@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "96RsUEzZVYA9W8Sj4QPr57m5LBAPIPiuD+fuh528VQ5dZYzGqpSeST+AoM1BvIPXy4y8ugZja/G9Qx0RSW0A0w==",
+  "dgSpecHash": "kcXdfzCJuxWV+BiChY0QwRTBRSkoBFMPcXRbbxghJk7JbKLBWbWdvSiK0XUnXvovxmDYu+aOzHK3KGquWTsw3Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\remix\\OneDrive\\Рабочий стол\\CinemaSystem\\CinemaSystem\\CinemaSystem.csproj",
+  "projectFilePath": "C:\\Users\\remix\\RiderProjects\\cinemasystem\\CinemaSystem\\CinemaSystem.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\remix\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\remix\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\7.0.13\\microsoft.aspnetcore.cryptography.internal.7.0.13.nupkg.sha512",
@@ -34,12 +34,15 @@
     "C:\\Users\\remix\\.nuget\\packages\\microsoft.extensions.options\\7.0.1\\microsoft.extensions.options.7.0.1.nupkg.sha512",
     "C:\\Users\\remix\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
     "C:\\Users\\remix\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\remix\\.nuget\\packages\\npgsql\\7.0.0\\npgsql.7.0.0.nupkg.sha512",
+    "C:\\Users\\remix\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\7.0.0\\npgsql.entityframeworkcore.postgresql.7.0.0.nupkg.sha512",
     "C:\\Users\\remix\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.1.4\\sqlitepclraw.bundle_e_sqlite3.2.1.4.nupkg.sha512",
     "C:\\Users\\remix\\.nuget\\packages\\sqlitepclraw.core\\2.1.4\\sqlitepclraw.core.2.1.4.nupkg.sha512",
     "C:\\Users\\remix\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.1.4\\sqlitepclraw.lib.e_sqlite3.2.1.4.nupkg.sha512",
     "C:\\Users\\remix\\.nuget\\packages\\sqlitepclraw.provider.e_sqlite3\\2.1.4\\sqlitepclraw.provider.e_sqlite3.2.1.4.nupkg.sha512",
     "C:\\Users\\remix\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
     "C:\\Users\\remix\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
+    "C:\\Users\\remix\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\remix\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
     "C:\\Users\\remix\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512"
   ],

@@ -1,11 +1,170 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.gitlab.plugin.GitLabSettingsConfigurable&quot;
-  }
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8c097a92-a7f4-40e6-a69d-99d4e160bab6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.CinemaSystem/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.CinemaSystem/.idea/cody_history.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/Docker/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/Models/Movie.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/Models/Reservation.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/Models/Screening.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/Models/User.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/CinemaSystem.deps.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/CinemaSystem.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/CinemaSystem.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/CinemaSystem.pdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/CinemaSystem.runtimeconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/CinemaSystem.staticwebassets.runtime.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/Humanizer.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/Microsoft.AspNetCore.Cryptography.Internal.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/Microsoft.AspNetCore.Identity.UI.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/Microsoft.Data.Sqlite.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.Abstractions.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.Design.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.Relational.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.Sqlite.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/Microsoft.Extensions.DependencyModel.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/Microsoft.Extensions.FileProviders.Embedded.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/Microsoft.Extensions.Identity.Core.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/Microsoft.Extensions.Identity.Stores.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/Microsoft.Extensions.Options.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/Mono.TextTemplating.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/Npgsql.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/SQLitePCLRaw.batteries_v2.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/SQLitePCLRaw.core.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/SQLitePCLRaw.provider.e_sqlite3.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/System.CodeDom.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/app.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/appsettings.Development.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/appsettings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/runtimes/alpine-arm/native/libe_sqlite3.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/runtimes/alpine-arm64/native/libe_sqlite3.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/runtimes/alpine-x64/native/libe_sqlite3.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/runtimes/browser-wasm/nativeassets/net7.0/e_sqlite3.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/runtimes/linux-arm/native/libe_sqlite3.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/runtimes/linux-arm64/native/libe_sqlite3.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/runtimes/linux-armel/native/libe_sqlite3.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/runtimes/linux-mips64/native/libe_sqlite3.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/runtimes/linux-musl-arm/native/libe_sqlite3.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/runtimes/linux-musl-arm64/native/libe_sqlite3.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/runtimes/linux-musl-x64/native/libe_sqlite3.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/runtimes/linux-ppc64le/native/libe_sqlite3.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/runtimes/linux-s390x/native/libe_sqlite3.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/runtimes/linux-x64/native/libe_sqlite3.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/runtimes/linux-x86/native/libe_sqlite3.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/runtimes/maccatalyst-arm64/native/libe_sqlite3.dylib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/runtimes/maccatalyst-x64/native/libe_sqlite3.dylib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/runtimes/osx-arm64/native/libe_sqlite3.dylib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/runtimes/osx-x64/native/libe_sqlite3.dylib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/runtimes/win-arm/native/e_sqlite3.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/runtimes/win-arm64/native/e_sqlite3.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/runtimes/win-x64/native/e_sqlite3.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/runtimes/win-x86/native/e_sqlite3.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/obj/CinemaSystem.csproj.EntityFrameworkCore.targets" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/obj/Debug/net7.0/CinemaSy.27FFF70E.Up2Date" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/obj/Debug/net7.0/CinemaSystem.MvcApplicationPartsAssemblyInfo.cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/obj/Debug/net7.0/CinemaSystem.MvcApplicationPartsAssemblyInfo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/obj/Debug/net7.0/CinemaSystem.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/obj/Debug/net7.0/CinemaSystem.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/obj/Debug/net7.0/CinemaSystem.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/obj/Debug/net7.0/CinemaSystem.genruntimeconfig.cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/obj/Debug/net7.0/CinemaSystem.pdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/obj/Debug/net7.0/apphost.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/obj/Debug/net7.0/ref/CinemaSystem.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/obj/Debug/net7.0/refint/CinemaSystem.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/obj/Debug/net7.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/obj/Debug/net7.0/scopedcss/bundle/CinemaSystem.styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/obj/Debug/net7.0/scopedcss/projectbundle/CinemaSystem.bundle.scp.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/obj/Debug/net7.0/staticwebassets.build.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/obj/Debug/net7.0/staticwebassets.development.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/obj/Debug/net7.0/staticwebassets.pack.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/obj/Debug/net7.0/staticwebassets/msbuild.CinemaSystem.Microsoft.AspNetCore.StaticWebAssets.props" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/obj/Debug/net7.0/staticwebassets/msbuild.build.CinemaSystem.props" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/obj/Debug/net7.0/staticwebassets/msbuild.buildMultiTargeting.CinemaSystem.props" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CinemaSystem/obj/Debug/net7.0/staticwebassets/msbuild.buildTransitive.CinemaSystem.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CinemaSystem/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CinemaSystem/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CinemaSystem/CinemaSystem.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CinemaSystem/CinemaSystem.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CinemaSystem/Data/ApplicationDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CinemaSystem/Data/ApplicationDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CinemaSystem/Data/Migrations/ApplicationDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CinemaSystem/Data/Migrations/ApplicationDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CinemaSystem/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CinemaSystem/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CinemaSystem/obj/CinemaSystem.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/CinemaSystem/obj/CinemaSystem.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CinemaSystem/obj/CinemaSystem.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/CinemaSystem/obj/CinemaSystem.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CinemaSystem/obj/Debug/net7.0/CinemaSystem.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CinemaSystem/obj/Debug/net7.0/CinemaSystem.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CinemaSystem/obj/Debug/net7.0/CinemaSystem.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CinemaSystem/obj/Debug/net7.0/CinemaSystem.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CinemaSystem/obj/Debug/net7.0/CinemaSystem.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/CinemaSystem/obj/Debug/net7.0/CinemaSystem.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CinemaSystem/obj/Debug/net7.0/CinemaSystem.RazorAssemblyInfo.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CinemaSystem/obj/Debug/net7.0/CinemaSystem.RazorAssemblyInfo.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CinemaSystem/obj/Debug/net7.0/CinemaSystem.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CinemaSystem/obj/Debug/net7.0/CinemaSystem.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CinemaSystem/obj/Debug/net7.0/CinemaSystem.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CinemaSystem/obj/Debug/net7.0/CinemaSystem.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CinemaSystem/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/CinemaSystem/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CinemaSystem/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CinemaSystem/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CinemaSystem/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/CinemaSystem/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CinemaSystem/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/CinemaSystem/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CinemaSystem/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/CinemaSystem/obj/rider.project.restore.info" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodyActiveAccount">
+    <option name="activeAccountId" value="VXNlcjozODMxMDA=" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
 }</component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.CinemaSystem: http">
+  <component name="ProjectId" id="2euvh5ibO0ndBAa7eeVxFYZaWGd" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Docker.Docker: Compose Deployment.executor": "Run",
+    "RunOnceActivity.CodyConvertUrlToCodebaseName": "true",
+    "RunOnceActivity.CodyHistoryLlmMigration": "true",
+    "RunOnceActivity.CodyProjectSettingsMigration": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.gitlab.plugin.GitLabSettingsConfigurable",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ],
+    "rider.external.source.directories": [
+      "C:\\Users\\remix\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\remix\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\remix\\AppData\\Local\\Symbols\\src"
+    ]
+  }
+}]]></component>
+  <component name="RunManager" selected="Docker.Docker: Compose Deployment">
     <configuration name="CinemaSystem: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/CinemaSystem/CinemaSystem.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net7.0" />
@@ -71,9 +230,54 @@
       <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
       <method v="2" />
     </configuration>
-    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
-      <deployment type="dockerfile" />
+    <configuration name="Docker: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="sourceFilePath" value="CinemaSystem/Docker/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
       <method v="2" />
     </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue=".NET Launch Settings Profile.CinemaSystem: http" />
+      <item itemvalue=".NET Launch Settings Profile.CinemaSystem: https" />
+      <item itemvalue=".NET Launch Settings Profile.CinemaSystem: IIS Express" />
+      <item itemvalue="Docker.CinemaSystem/Dockerfile" />
+      <item itemvalue="Docker.Docker: Compose Deployment" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.Docker: Compose Deployment" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8c097a92-a7f4-40e6-a69d-99d4e160bab6" name="Changes" comment="" />
+      <created>1712767394300</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1712767394300</updated>
+      <workItem from="1712767395388" duration="7000" />
+      <workItem from="1712820413213" duration="1618000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

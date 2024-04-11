@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\remix\\OneDrive\\Рабочий стол\\CinemaSystem\\CinemaSystem\\CinemaSystem.csproj": {}
+    "C:\\Users\\remix\\RiderProjects\\cinemasystem\\CinemaSystem\\CinemaSystem.csproj": {}
   },
   "projects": {
-    "C:\\Users\\remix\\OneDrive\\Рабочий стол\\CinemaSystem\\CinemaSystem\\CinemaSystem.csproj": {
+    "C:\\Users\\remix\\RiderProjects\\cinemasystem\\CinemaSystem\\CinemaSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\remix\\OneDrive\\Рабочий стол\\CinemaSystem\\CinemaSystem\\CinemaSystem.csproj",
+        "projectUniqueName": "C:\\Users\\remix\\RiderProjects\\cinemasystem\\CinemaSystem\\CinemaSystem.csproj",
         "projectName": "CinemaSystem",
-        "projectPath": "C:\\Users\\remix\\OneDrive\\Рабочий стол\\CinemaSystem\\CinemaSystem\\CinemaSystem.csproj",
+        "projectPath": "C:\\Users\\remix\\RiderProjects\\cinemasystem\\CinemaSystem\\CinemaSystem.csproj",
         "packagesPath": "C:\\Users\\remix\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\remix\\OneDrive\\Рабочий стол\\CinemaSystem\\CinemaSystem\\obj\\",
+        "outputPath": "C:\\Users\\remix\\RiderProjects\\cinemasystem\\CinemaSystem\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\remix\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\remix\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -34,6 +32,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -59,6 +62,10 @@
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[7.0.13, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             }
           },
           "imports": [
@@ -80,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
         }
       }
     }
