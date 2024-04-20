@@ -4,18 +4,12 @@ namespace CinemaSystem.Models;
 
 public class User
 {
- 
-    public int UserId { get; set; }
+    public int Id { get; set; }
 
     [Required]
     public string Username { get; set; }
 
     [Required]
-    [EmailAddress]
-    public string Email { get; set; }
-
-    [Required]
-    public string PasswordHash { get; set; }
-
-    public ICollection<Reservation> Reservations { get; set; } = new List<Reservation>();
+    [DataType(DataType.Password)]
+    public string Password { get; set; }
 }
