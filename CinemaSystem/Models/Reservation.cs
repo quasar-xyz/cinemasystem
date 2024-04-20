@@ -1,24 +1,21 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CinemaSystem.Models;
-
-public class Reservation
+namespace CinemaSystem.Models
 {
-    public int ReservationId { get; set; }
+    public class Reservation
+    {
+        public int ReservationId { get; set; }
 
-    public int UserId { get; set; }
+        [ForeignKey("User")]
+        public int UserId { get; set; }
+        public User User { get; set; }
 
-    
-    public User User { get; set; }
+        [ForeignKey("Showtime")]
+        public int ShowtimeId { get; set; }
+        public Showtime Showtime { get; set; }
 
-    public int ScreeningId { get; set; }
-
-    
-    public Screening Screening { get; set; }
-
-    [Required]
-    public string SeatNumber { get; set; }
-
-    [Required]
-    public DateTime ReservationTime { get; set; }
+        public ICollection<Seat> Seats { get; set; } = new List<Seat>();
+    }
 }

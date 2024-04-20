@@ -4,19 +4,12 @@ namespace CinemaSystem.Models;
 
 public class Movie
 {
-    public int MovieId { get; set; }
-
-    [Required]
-    public string Title { get; set; }
-
-    [Required]
-    public string Description { get; set; }
-
-    [Required]
-    public DateTime ReleaseDate { get; set; }
-
-    [Required]
-    public int DurationMinutes { get; set; }
     
-    public ICollection<Screening> Screenings { get; set; }
+    public int MovieId { get; set; }
+    public string Title { get; set; }
+    public string Description { get; set; }
+    public string Director { get; set; }
+    public string Genre { get; set; }
+    public DateTime ReleaseDate { get; set; }
+    public ICollection<Showtime> Showtimes { get; set; }
 }
