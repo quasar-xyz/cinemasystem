@@ -4,33 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c097a92-a7f4-40e6-a69d-99d4e160bab6" name="Changes" comment="Movie">
-      <change afterPath="$PROJECT_DIR$/CinemaSystem/Migrations/20240420170611_init2.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CinemaSystem/Migrations/20240420170611_init2.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CinemaSystem/Models/Booking.cs" afterDir="false" />
+    <list default="true" id="8c097a92-a7f4-40e6-a69d-99d4e160bab6" name="Changes" comment="MovieController">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CinemaSystem/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CinemaSystem/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinemaSystem/CinemaSystem.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CinemaSystem/CinemaSystem.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinemaSystem/Controllers/MovieController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinemaSystem/Controllers/ReservationsController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinemaSystem/Controllers/SeatsController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinemaSystem/Controllers/ShowtimesController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinemaSystem/Data/ApplicationDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CinemaSystem/Data/ApplicationDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinemaSystem/Migrations/20240420150439_init2.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinemaSystem/Migrations/20240420150439_init2.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinemaSystem/Migrations/ApplicationDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CinemaSystem/Migrations/ApplicationDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinemaSystem/Models/Cinema.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinemaSystem/Models/Movie.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CinemaSystem/Models/Movie.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinemaSystem/Models/Reservation.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinemaSystem/Models/Seat.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinemaSystem/Models/Showtime.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinemaSystem/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CinemaSystem/Models/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinemaSystem/Pages/Movies/Create.cshtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinemaSystem/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CinemaSystem/Views/Home/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinemaSystem/Views/Movie/Create.cshtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinemaSystem/Views/Movie/Delete.cshtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinemaSystem/Views/Movie/Details.cshtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinemaSystem/Views/Movie/Edit.cshtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinemaSystem/Views/Movie/Index.cshtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CinemaSystem/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CinemaSystem/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/CinemaSystem.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/CinemaSystem.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/CinemaSystem.exe" beforeDir="false" afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/CinemaSystem.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/CinemaSystem.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CinemaSystem/bin/Debug/net7.0/CinemaSystem.pdb" afterDir="false" />
@@ -46,7 +22,7 @@
       <change beforePath="$PROJECT_DIR$/CinemaSystem/obj/Debug/net7.0/refint/CinemaSystem.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CinemaSystem/obj/Debug/net7.0/refint/CinemaSystem.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CinemaSystem/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/CinemaSystem/obj/project.assets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CinemaSystem/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CinemaSystem/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinemaSystem/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/CinemaSystem/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CinemaSystem/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/CinemaSystem/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +117,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="Docker.Docker: Compose Deployment">
+  <component name="RunManager" selected=".NET Launch Settings Profile.CinemaSystem: https">
     <configuration name="CinemaSystem: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/CinemaSystem/CinemaSystem.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net7.0" />
@@ -249,7 +225,7 @@
       <workItem from="1712820413213" duration="1809000" />
       <workItem from="1713289463149" duration="161000" />
       <workItem from="1713291158818" duration="38000" />
-      <workItem from="1713623188755" duration="9431000" />
+      <workItem from="1713623188755" duration="10323000" />
     </task>
     <task id="LOCAL-00001" summary="database update">
       <option name="closed" value="true" />
@@ -275,7 +251,23 @@
       <option name="project" value="LOCAL" />
       <updated>1713627376384</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Database">
+      <option name="closed" value="true" />
+      <created>1713632951583</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1713632951583</updated>
+    </task>
+    <task id="LOCAL-00005" summary="MovieController">
+      <option name="closed" value="true" />
+      <created>1713633407509</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1713633407509</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,6 +280,8 @@
     <MESSAGE value="database update" />
     <MESSAGE value="remake" />
     <MESSAGE value="Movie" />
-    <option name="LAST_COMMIT_MESSAGE" value="Movie" />
+    <MESSAGE value="Database" />
+    <MESSAGE value="MovieController" />
+    <option name="LAST_COMMIT_MESSAGE" value="MovieController" />
   </component>
 </project>
