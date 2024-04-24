@@ -15,14 +15,13 @@ public class MovieController : Controller
         _context = context;
     }
 
-    // GET: Movies
+    
     public async Task<IActionResult> Index()
     {
         var movies = await _context.Movies.ToListAsync();
         return View(movies);
     }
-
-    // GET: Movies/Details/5
+  
     public async Task<IActionResult> Details(int? id)
     {
         if (id == null)
@@ -40,13 +39,13 @@ public class MovieController : Controller
         return View(movie);
     }
 
-    // GET: Movies/Create
+    
     public IActionResult Create()
     {
         return View();
     }
 
-    // POST: Movies/Create
+  
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create([Bind("Id,Name,ReleaseDate")] Movie movie)
@@ -60,7 +59,7 @@ public class MovieController : Controller
         return View(movie);
     }
 
-    // GET: Movies/Edit/5
+ 
     public async Task<IActionResult> Edit(int? id)
     {
         if (id == null)
@@ -76,7 +75,7 @@ public class MovieController : Controller
         return View(movie);
     }
 
-    // POST: Movies/Edit/5
+   
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Edit(int id, [Bind("Id,Name,ReleaseDate")] Movie movie)
@@ -109,7 +108,7 @@ public class MovieController : Controller
         return View(movie);
     }
 
-    // GET: Movies/Delete/5
+   
     public async Task<IActionResult> Delete(int? id)
     {
         if (id == null)
@@ -127,9 +126,8 @@ public class MovieController : Controller
         return View(movie);
     }
 
-    // POST: Movies/Delete/5
-    [HttpPost, ActionName("Delete")]
-    [ValidateAntiForgeryToken]
+  
+   
     public async Task<IActionResult> DeleteConfirmed(int id)
     {
         var movie = await _context.Movies.FindAsync(id);
@@ -142,5 +140,6 @@ public class MovieController : Controller
     {
         return _context.Movies.Any(e => e.Id == id);
     }
-    
+
+   
 }
