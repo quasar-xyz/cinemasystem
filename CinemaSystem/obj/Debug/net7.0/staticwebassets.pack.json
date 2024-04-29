@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\CinemaSystem.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\remix\\RiderProjects\\cinemasystem\\CinemaSystem\\wwwroot\\Images\\one.png",
+      "PackagePath": "staticwebassets\\Images\\one.png"
+    },
+    {
       "Id": "C:\\Users\\remix\\RiderProjects\\cinemasystem\\CinemaSystem\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

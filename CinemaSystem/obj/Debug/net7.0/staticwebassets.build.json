@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/b4xuzw5KLEfFKc8hyrzLKRirKVFu5IlqXnN+n+nqOU=",
+  "Hash": "zm/cPa8cnKatVY70P5OkZAU50pTn+p6J8YXwJDUyZMQ=",
   "Source": "CinemaSystem",
   "BasePath": "_content/CinemaSystem",
   "Mode": "Default",
@@ -1231,6 +1231,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\remix\\RiderProjects\\cinemasystem\\CinemaSystem\\wwwroot\\Images\\one.png",
+      "SourceId": "CinemaSystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\remix\\RiderProjects\\cinemasystem\\CinemaSystem\\wwwroot\\",
+      "BasePath": "_content/CinemaSystem",
+      "RelativePath": "Images/one.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\one.png"
     },
     {
       "Identity": "C:\\Users\\remix\\RiderProjects\\cinemasystem\\CinemaSystem\\wwwroot\\js\\site.js",

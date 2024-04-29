@@ -12,4 +12,6 @@ public class Movie
     [Display(Name = "Release Date")]
     [DataType(DataType.Date)]
     public DateTime ReleaseDate { get; set; }
+    
+   
 }
