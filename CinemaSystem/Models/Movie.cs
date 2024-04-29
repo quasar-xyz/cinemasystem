@@ -13,5 +13,5 @@ public class Movie
     [DataType(DataType.Date)]
     public DateTime ReleaseDate { get; set; }
     
-   
+    public string ImagePath { get; set; }
 }

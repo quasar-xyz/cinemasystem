@@ -1,10 +1,14 @@
 ﻿using CinemaSystem.Data;
 using CinemaSystem.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace CinemaSystem.Controllers;
 
+
+[Authorize(Roles = "Admin")]
 public class MovieController : Controller
 {
     
@@ -42,14 +46,20 @@ public class MovieController : Controller
     
     public IActionResult Create()
     {
+        var images = Directory.EnumerateFiles(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Images"))
+            .Select(Path.GetFileName);
+        ViewBag.ImageFiles = new SelectList(images);
         return View();
     }
 
   
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create([Bind("Id,Name,ReleaseDate")] Movie movie)
+    public async Task<IActionResult> Create([Bind("Id,Name,ReleaseDate,ImagePath")] Movie movie)
     {
+        
+        movie.ImagePath = "Images/" + movie.ImagePath;
+        
         if (ModelState.IsValid)
         {
             _context.Add(movie);

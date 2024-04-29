@@ -5,12 +5,28 @@
       "PackagePath": "staticwebassets\\CinemaSystem.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\remix\\RiderProjects\\cinemasystem\\CinemaSystem\\wwwroot\\Images\\61RhWaYBp7L._AC_UF894,1000_QL80_.jpg",
+      "PackagePath": "staticwebassets\\Images\\61RhWaYBp7L._AC_UF894,1000_QL80_.jpg"
+    },
+    {
       "Id": "C:\\Users\\remix\\RiderProjects\\cinemasystem\\CinemaSystem\\wwwroot\\Images\\one.png",
       "PackagePath": "staticwebassets\\Images\\one.png"
     },
     {
+      "Id": "C:\\Users\\remix\\RiderProjects\\cinemasystem\\CinemaSystem\\wwwroot\\Images\\vd-046-star-wars-official-poster-ep7.jpg",
+      "PackagePath": "staticwebassets\\Images\\vd-046-star-wars-official-poster-ep7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\remix\\RiderProjects\\cinemasystem\\CinemaSystem\\wwwroot\\Images\\venom__let_there_be_carnage_animated_poster_png_by_gbenefiel_depu77v-fullview.jpg",
+      "PackagePath": "staticwebassets\\Images\\venom__let_there_be_carnage_animated_poster_png_by_gbenefiel_depu77v-fullview.jpg"
+    },
+    {
       "Id": "C:\\Users\\remix\\RiderProjects\\cinemasystem\\CinemaSystem\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\remix\\RiderProjects\\cinemasystem\\CinemaSystem\\wwwroot\\css\\styles.css",
+      "PackagePath": "staticwebassets\\css\\styles.css"
     },
     {
       "Id": "C:\\Users\\remix\\RiderProjects\\cinemasystem\\CinemaSystem\\wwwroot\\favicon.ico",

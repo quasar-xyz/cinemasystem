@@ -18,8 +18,8 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\remix\RiderProjects\cinemasystem\CinemaSystem
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/remix/RiderProjects/cinemasystem/CinemaSystem/Areas/Identity/Pages/Account/Logout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
+[C:/Users/remix/RiderProjects/cinemasystem/CinemaSystem/Areas/Identity/Pages/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/remix/RiderProjects/cinemasystem/CinemaSystem/Areas/Identity/Pages/Account/Register.cshtml]
