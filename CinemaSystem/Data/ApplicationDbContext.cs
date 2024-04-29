@@ -12,14 +12,12 @@ namespace CinemaSystem.Data
         }
 
         public DbSet<Movie> Movies { get; set; }
-        public DbSet<User> Users { get; set; }
         public DbSet<Booking> Bookings { get; set; }
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Movie>().ToTable("Movies");
-            modelBuilder.Entity<User>().ToTable("Users");
             modelBuilder.Entity<Booking>().ToTable("Bookings");
         }
      
