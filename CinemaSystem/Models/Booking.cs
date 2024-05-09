@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using CinemaSystem.Data.Identity;
 
 namespace CinemaSystem.Models;
 
@@ -6,15 +7,16 @@ public class Booking
 {
     public int Id { get; set; }
 
-    public int UserId { get; set; }
+    public string UserId { get; set; }
 
     public int MovieId { get; set; }
-
-    [Required]
-    [Display(Name = "Seat Number")]
-    public string SeatNumber { get; set; }
-
+    public Movie Movie { get; set; }
+    
+    public CustomUser User { get; set; }
+    
     [Display(Name = "Booking Date")]
     [DataType(DataType.DateTime)]
     public DateTime BookingDate { get; set; }
+    
+    
 }

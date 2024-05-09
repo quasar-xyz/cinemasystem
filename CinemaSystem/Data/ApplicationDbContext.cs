@@ -1,26 +1,26 @@
-﻿using CinemaSystem.Models;
+﻿using CinemaSystem.Data.Identity;
+using CinemaSystem.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace CinemaSystem.Data
-{
-    public class ApplicationDbContext : IdentityDbContext
-    {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-            : base(options)
-        {
-        }
+namespace CinemaSystem.Data;
 
-        public DbSet<Movie> Movies { get; set; }
-        public DbSet<Booking> Bookings { get; set; }
-        
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Movie>().ToTable("Movies");
-            modelBuilder.Entity<Booking>().ToTable("Bookings");
-        }
-     
-       
+public class ApplicationDbContext : IdentityDbContext<CustomUser>
+{
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        : base(options)
+    {
+    }
+
+    public DbSet<Movie> Movies { get; set; }
+    public DbSet<Booking> Bookings { get; set; }
+    
+    public DbSet<Seat> Seats { get; set; }
+    
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+        modelBuilder.Entity<Movie>().ToTable("Movies");
+        modelBuilder.Entity<Booking>().ToTable("Bookings");
     }
 }

@@ -1,0 +1,14 @@
+﻿@model IEnumerable<CinemaSystem.Models.Booking>
+
+<div class="container">
+    <h2>My Bookings</h2>
+    <ul>
+        @foreach (var booking in Model)
+        {
+            <li>
+                <p>Movie ID: @booking.MovieId</p>
+                <p>Booking Date: @booking.BookingDate.ToString("g")</p>
+            </li>
+        }
+    </ul>
+</div>

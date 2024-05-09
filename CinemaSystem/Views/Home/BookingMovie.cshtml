@@ -1,0 +1,9 @@
+﻿@model CinemaSystem.Models.Booking
+
+<div class="container">
+    <h2>Booking Confirmation</h2>
+    <p>Thank you for your booking!</p>
+    <p>Movie ID: @Model.MovieId</p>
+    <p>Booking Date: @Model.BookingDate.ToString("g")</p>
+    <a href="@Url.Action("Index", "Home")">Back to Home</a>
+</div>
