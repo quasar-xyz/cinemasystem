@@ -15,7 +15,7 @@ public class ApplicationDbContext : IdentityDbContext<CustomUser>
     public DbSet<Movie> Movies { get; set; }
     public DbSet<Booking> Bookings { get; set; }
     
-    public DbSet<Seat> Seats { get; set; }
+    public DbSet<testmodel> testmodels { get; set; }
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

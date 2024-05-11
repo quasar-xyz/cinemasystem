@@ -143,26 +143,17 @@ namespace CinemaSystem.Migrations
                     b.ToTable("Movies", (string)null);
                 });
 
-            modelBuilder.Entity("CinemaSystem.Models.Seat", b =>
+            modelBuilder.Entity("CinemaSystem.Models.testmodel", b =>
                 {
-                    b.Property<int>("SeatId")
+                    b.Property<int>("testmodelid")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("SeatId"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("testmodelid"));
 
-                    b.Property<int>("Column")
-                        .HasColumnType("integer");
+                    b.HasKey("testmodelid");
 
-                    b.Property<bool>("IsBooked")
-                        .HasColumnType("boolean");
-
-                    b.Property<int>("Row")
-                        .HasColumnType("integer");
-
-                    b.HasKey("SeatId");
-
-                    b.ToTable("Seats");
+                    b.ToTable("testmodels");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
