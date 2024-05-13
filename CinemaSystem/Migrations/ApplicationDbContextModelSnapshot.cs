@@ -106,6 +106,12 @@ namespace CinemaSystem.Migrations
                     b.Property<int>("MovieId")
                         .HasColumnType("integer");
 
+                    b.Property<int>("SeatId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("ShowTimeId")
+                        .HasColumnType("integer");
+
                     b.Property<string>("UserId")
                         .IsRequired()
                         .HasColumnType("text");
@@ -113,6 +119,10 @@ namespace CinemaSystem.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("MovieId");
+
+                    b.HasIndex("SeatId");
+
+                    b.HasIndex("ShowTimeId");
 
                     b.HasIndex("UserId");
 
@@ -143,15 +153,68 @@ namespace CinemaSystem.Migrations
                     b.ToTable("Movies", (string)null);
                 });
 
-            modelBuilder.Entity("CinemaSystem.Models.testmodel", b =>
+            modelBuilder.Entity("CinemaSystem.Models.Seat", b =>
                 {
-                    b.Property<int>("testmodelid")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("testmodelid"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.HasKey("testmodelid");
+                    b.Property<bool>("IsBooked")
+                        .HasColumnType("boolean");
+
+                    b.Property<int>("ShowTimeId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ShowTimeId");
+
+                    b.ToTable("Seats");
+                });
+
+            modelBuilder.Entity("CinemaSystem.Models.ShowTime", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("EndTime")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<int>("MovieId")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("StartTime")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MovieId");
+
+                    b.ToTable("ShowTimes");
+                });
+
+            modelBuilder.Entity("CinemaSystem.Models.Testmodel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("testmodeldescription")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("testmodelname")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
 
                     b.ToTable("testmodels");
                 });
@@ -300,6 +363,18 @@ namespace CinemaSystem.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("CinemaSystem.Models.Seat", "Seat")
+                        .WithMany()
+                        .HasForeignKey("SeatId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CinemaSystem.Models.ShowTime", "ShowTime")
+                        .WithMany()
+                        .HasForeignKey("ShowTimeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("CinemaSystem.Data.Identity.CustomUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
@@ -308,7 +383,33 @@ namespace CinemaSystem.Migrations
 
                     b.Navigation("Movie");
 
+                    b.Navigation("Seat");
+
+                    b.Navigation("ShowTime");
+
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("CinemaSystem.Models.Seat", b =>
+                {
+                    b.HasOne("CinemaSystem.Models.ShowTime", "ShowTime")
+                        .WithMany("Seats")
+                        .HasForeignKey("ShowTimeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ShowTime");
+                });
+
+            modelBuilder.Entity("CinemaSystem.Models.ShowTime", b =>
+                {
+                    b.HasOne("CinemaSystem.Models.Movie", "Movie")
+                        .WithMany()
+                        .HasForeignKey("MovieId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Movie");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -360,6 +461,11 @@ namespace CinemaSystem.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("CinemaSystem.Models.ShowTime", b =>
+                {
+                    b.Navigation("Seats");
                 });
 #pragma warning restore 612, 618
         }

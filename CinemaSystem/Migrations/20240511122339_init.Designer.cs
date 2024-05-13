@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CinemaSystem.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240511115802_mig3")]
-    partial class mig3
+    [Migration("20240511122339_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -146,15 +146,23 @@ namespace CinemaSystem.Migrations
                     b.ToTable("Movies", (string)null);
                 });
 
-            modelBuilder.Entity("CinemaSystem.Models.testmodel", b =>
+            modelBuilder.Entity("CinemaSystem.Models.Testmodel", b =>
                 {
-                    b.Property<int>("testmodelid")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("testmodelid"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.HasKey("testmodelid");
+                    b.Property<string>("testmodeldescription")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("testmodelname")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
 
                     b.ToTable("testmodels");
                 });

@@ -20,6 +20,30 @@ public class HomeController : Controller
         _context = context;
     }
 
+    
+    [Authorize]
+    public async Task<IActionResult> ShowTimes(int? id)
+    {
+        if (id == null)
+        {
+            return NotFound();
+        }
+
+        var showTimes = await _context.ShowTimes
+            .Where(s => s.MovieId == id)
+            .ToListAsync();
+
+        if (showTimes == null)
+        {
+            return NotFound();
+        }
+
+        return View(showTimes);
+    }
+    
+    
+    
+    
     [Authorize]
     public async Task<IActionResult> BookMovie(int? id)
     {
@@ -28,19 +52,29 @@ public class HomeController : Controller
             return NotFound();
         }
 
-        var movie = await _context.Movies.FindAsync(id);
-        if (movie == null)
+        var showTime = await _context.ShowTimes.FindAsync(id);
+        if (showTime == null)
         {
             return NotFound();
         }
 
         var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
+        var seat = new Seat
+        {
+            IsBooked = true,
+            ShowTimeId = showTime.Id
+        };
+
+        _context.Add(seat);
+        await _context.SaveChangesAsync(); 
+
         var booking = new Booking
         {
             UserId = userId,
-            MovieId = movie.Id,
-            BookingDate = DateTime.Now
+            SeatId = seat.Id, // Now the SeatId is available
+            ShowTimeId = showTime.Id,
+            MovieId = showTime.MovieId 
         };
 
         _context.Add(booking);
@@ -63,6 +97,9 @@ public async Task<IActionResult> MyBookings()
         return View(bookings);
     }
     
+
+
+
     public async Task<IActionResult> DetailsMovie(int? id)
     {
         if (id == null)

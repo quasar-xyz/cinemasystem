@@ -9,6 +9,11 @@ public class Booking
 
     public string UserId { get; set; }
 
+    public int SeatId { get; set; } 
+    public Seat Seat { get; set; } 
+    public int ShowTimeId { get; set; } 
+    public ShowTime ShowTime { get; set; } 
+    
     public int MovieId { get; set; }
     public Movie Movie { get; set; }
     

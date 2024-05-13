@@ -1,0 +1,25 @@
+﻿@model System.Collections.Generic.List<CinemaSystem.Models.ShowTime>
+
+<h2>Select Show Time</h2>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Start Time</th>
+        <th>End Time</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var showTime in Model)
+    {
+        <tr>
+            <td>@showTime.StartTime</td>
+            <td>@showTime.EndTime</td>
+            <td>
+                <a asp-action="BookMovie" asp-route-id="@showTime.Id" class="btn btn-primary">Book</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

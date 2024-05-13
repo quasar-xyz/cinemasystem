@@ -1,6 +1,8 @@
 ﻿namespace CinemaSystem.Models;
 
-public class testmodel
+public class Testmodel
 {
-    public int testmodelid { get; set; }
+    public int Id { get; set; }
+    public string testmodelname { get; set; }
+    public string testmodeldescription { get; set; }
 }
