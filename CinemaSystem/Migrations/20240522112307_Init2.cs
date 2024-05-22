@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CinemaSystem.Migrations
 {
     /// <inheritdoc />
-    public partial class init : Migration
+    public partial class Init2 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -189,12 +189,55 @@ namespace CinemaSystem.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "ShowTimes",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    MovieId = table.Column<int>(type: "integer", nullable: false),
+                    StartTime = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
+                    EndTime = table.Column<DateTime>(type: "timestamp without time zone", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ShowTimes", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ShowTimes_Movies_MovieId",
+                        column: x => x.MovieId,
+                        principalTable: "Movies",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Seats",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    IsBooked = table.Column<bool>(type: "boolean", nullable: false),
+                    ShowTimeId = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Seats", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Seats_ShowTimes_ShowTimeId",
+                        column: x => x.ShowTimeId,
+                        principalTable: "ShowTimes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Bookings",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     UserId = table.Column<string>(type: "text", nullable: false),
+                    SeatId = table.Column<int>(type: "integer", nullable: false),
+                    ShowTimeId = table.Column<int>(type: "integer", nullable: false),
                     MovieId = table.Column<int>(type: "integer", nullable: false),
                     BookingDate = table.Column<DateTime>(type: "timestamp without time zone", nullable: false)
                 },
@@ -211,6 +254,18 @@ namespace CinemaSystem.Migrations
                         name: "FK_Bookings_Movies_MovieId",
                         column: x => x.MovieId,
                         principalTable: "Movies",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Bookings_Seats_SeatId",
+                        column: x => x.SeatId,
+                        principalTable: "Seats",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Bookings_ShowTimes_ShowTimeId",
+                        column: x => x.ShowTimeId,
+                        principalTable: "ShowTimes",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -258,9 +313,30 @@ namespace CinemaSystem.Migrations
                 column: "MovieId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Bookings_SeatId",
+                table: "Bookings",
+                column: "SeatId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Bookings_ShowTimeId",
+                table: "Bookings",
+                column: "ShowTimeId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Bookings_UserId",
                 table: "Bookings",
                 column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Seats_ShowTimeId",
+                table: "Seats",
+                column: "ShowTimeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ShowTimes_MovieId",
+                table: "ShowTimes",
+                column: "MovieId",
+                unique: true);
         }
 
         /// <inheritdoc />
@@ -292,6 +368,12 @@ namespace CinemaSystem.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "Seats");
+
+            migrationBuilder.DropTable(
+                name: "ShowTimes");
 
             migrationBuilder.DropTable(
                 name: "Movies");

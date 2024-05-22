@@ -53,22 +53,30 @@ public class MovieController : Controller
     }
 
   
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create([Bind("Id,Name,ReleaseDate,ImagePath")] Movie movie)
+[HttpPost]
+[ValidateAntiForgeryToken]
+public async Task<IActionResult> Create([Bind("Id,Name,ReleaseDate,ImagePath,ShowTime")] Movie movie)
+{
+    if (ModelState.IsValid)
     {
-        
-        movie.ImagePath = "Images/" + movie.ImagePath;
-        
-        if (ModelState.IsValid)
-        {
-            _context.Add(movie);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-        return View(movie);
-    }
+        _context.Add(movie);
+        await _context.SaveChangesAsync();
 
+       
+        var showTime = new ShowTime
+        {
+            MovieId = movie.Id,
+            StartTime = DateTime.Now, 
+            EndTime = DateTime.Now.AddHours(3) 
+        };
+
+        _context.Add(showTime);
+        await _context.SaveChangesAsync();
+
+        return RedirectToAction(nameof(Index));
+    }
+    return View(movie);
+}
  
     public async Task<IActionResult> Edit(int? id)
     {

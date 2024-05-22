@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CinemaSystem.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240511123244_showtimes")]
-    partial class showtimes
+    [Migration("20240522112307_Init2")]
+    partial class Init2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -109,6 +109,12 @@ namespace CinemaSystem.Migrations
                     b.Property<int>("MovieId")
                         .HasColumnType("integer");
 
+                    b.Property<int>("SeatId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("ShowTimeId")
+                        .HasColumnType("integer");
+
                     b.Property<string>("UserId")
                         .IsRequired()
                         .HasColumnType("text");
@@ -116,6 +122,10 @@ namespace CinemaSystem.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("MovieId");
+
+                    b.HasIndex("SeatId");
+
+                    b.HasIndex("ShowTimeId");
 
                     b.HasIndex("UserId");
 
@@ -186,7 +196,8 @@ namespace CinemaSystem.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("MovieId");
+                    b.HasIndex("MovieId")
+                        .IsUnique();
 
                     b.ToTable("ShowTimes");
                 });
@@ -356,6 +367,18 @@ namespace CinemaSystem.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("CinemaSystem.Models.Seat", "Seat")
+                        .WithMany()
+                        .HasForeignKey("SeatId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CinemaSystem.Models.ShowTime", "ShowTime")
+                        .WithMany()
+                        .HasForeignKey("ShowTimeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("CinemaSystem.Data.Identity.CustomUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
@@ -363,6 +386,10 @@ namespace CinemaSystem.Migrations
                         .IsRequired();
 
                     b.Navigation("Movie");
+
+                    b.Navigation("Seat");
+
+                    b.Navigation("ShowTime");
 
                     b.Navigation("User");
                 });
@@ -381,8 +408,8 @@ namespace CinemaSystem.Migrations
             modelBuilder.Entity("CinemaSystem.Models.ShowTime", b =>
                 {
                     b.HasOne("CinemaSystem.Models.Movie", "Movie")
-                        .WithMany()
-                        .HasForeignKey("MovieId")
+                        .WithOne("ShowTime")
+                        .HasForeignKey("CinemaSystem.Models.ShowTime", "MovieId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -437,6 +464,12 @@ namespace CinemaSystem.Migrations
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("CinemaSystem.Models.Movie", b =>
+                {
+                    b.Navigation("ShowTime")
                         .IsRequired();
                 });
 

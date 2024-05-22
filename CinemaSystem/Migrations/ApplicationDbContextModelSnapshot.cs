@@ -193,7 +193,8 @@ namespace CinemaSystem.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("MovieId");
+                    b.HasIndex("MovieId")
+                        .IsUnique();
 
                     b.ToTable("ShowTimes");
                 });
@@ -404,8 +405,8 @@ namespace CinemaSystem.Migrations
             modelBuilder.Entity("CinemaSystem.Models.ShowTime", b =>
                 {
                     b.HasOne("CinemaSystem.Models.Movie", "Movie")
-                        .WithMany()
-                        .HasForeignKey("MovieId")
+                        .WithOne("ShowTime")
+                        .HasForeignKey("CinemaSystem.Models.ShowTime", "MovieId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -460,6 +461,12 @@ namespace CinemaSystem.Migrations
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("CinemaSystem.Models.Movie", b =>
+                {
+                    b.Navigation("ShowTime")
                         .IsRequired();
                 });
 
