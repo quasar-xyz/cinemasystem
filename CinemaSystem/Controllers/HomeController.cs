@@ -20,43 +20,23 @@ public class HomeController : Controller
         _context = context;
     }
 
-    
+
     [Authorize]
     public async Task<IActionResult> ShowTimes(int? id)
     {
-        if (id == null)
-        {
-            return NotFound();
-        }
-
         var showTimes = await _context.ShowTimes
             .Where(s => s.MovieId == id)
             .ToListAsync();
 
-        if (showTimes == null)
-        {
-            return NotFound();
-        }
 
         return View(showTimes);
     }
-    
-    
-    
-    
+
+
     [Authorize]
     public async Task<IActionResult> BookMovie(int? id)
     {
-        if (id == null)
-        {
-            return NotFound();
-        }
-
         var showTime = await _context.ShowTimes.FindAsync(id);
-        if (showTime == null)
-        {
-            return NotFound();
-        }
 
         var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
@@ -67,14 +47,14 @@ public class HomeController : Controller
         };
 
         _context.Add(seat);
-        await _context.SaveChangesAsync(); 
+        await _context.SaveChangesAsync();
 
         var booking = new Booking
         {
             UserId = userId,
-            SeatId = seat.Id, // Now the SeatId is available
+            SeatId = seat.Id,
             ShowTimeId = showTime.Id,
-            MovieId = showTime.MovieId 
+            MovieId = showTime.MovieId
         };
 
         _context.Add(booking);
@@ -85,10 +65,9 @@ public class HomeController : Controller
 
 
     [Authorize]
-
-public async Task<IActionResult> MyBookings()
+    public async Task<IActionResult> MyBookings()
     {
-        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier); 
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
         var bookings = await _context.Bookings
             .Include(b => b.Movie)
             .Where(b => b.UserId == userId)
@@ -96,23 +75,12 @@ public async Task<IActionResult> MyBookings()
 
         return View(bookings);
     }
-    
-
 
 
     public async Task<IActionResult> DetailsMovie(int? id)
     {
-        if (id == null)
-        {
-            return NotFound();
-        }
-
         var movie = await _context.Movies
             .FirstOrDefaultAsync(m => m.Id == id);
-        if (movie == null)
-        {
-            return NotFound();
-        }
 
         return View(movie);
     }
