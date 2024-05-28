@@ -108,6 +108,8 @@ public class HomeController : Controller
     
     
     
+    
+    
     public async Task<IActionResult> Index()
     {
         var movies = await _context.Movies.ToListAsync();

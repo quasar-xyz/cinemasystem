@@ -35,6 +35,8 @@
 <div class="container">
     <div class="admin-button">
         <a asp-controller="Movie" asp-action="Index" class="btn btn-secondary">Admin</a>
+        <button onclick="location.href='@Url.Action("MyBookings", "Movie")'" class="btn btn-primary">My Bookings</button>
+        
     </div>
 
     <div class="title-container">

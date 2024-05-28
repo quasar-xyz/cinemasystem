@@ -1,0 +1,25 @@
+﻿@model IEnumerable<CinemaSystem.Models.Booking>
+
+<h1>My Bookings</h1>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Movie</th>
+        <th>Show Time</th>
+        <th>Seat</th>
+        <th>Booking Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var booking in Model)
+    {
+        <tr>
+            <td>@booking.Movie.Name</td>
+            <td>@booking.ShowTime.StartTime - @booking.ShowTime.EndTime</td>
+            <td>@booking.Seat.Id</td>
+            <td>@booking.BookingDate</td>
+        </tr>
+    }
+    </tbody>
+</table>

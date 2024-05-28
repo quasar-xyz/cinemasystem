@@ -1,6 +1,8 @@
 ﻿using CinemaSystem.Data;
+using CinemaSystem.Data.Identity;
 using CinemaSystem.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,10 +12,11 @@ namespace CinemaSystem.Controllers;
 [Authorize(Roles = "Admin")]
 public class MovieController : Controller
 {
+    private readonly UserManager<CustomUser> _userManager;
     private readonly IWebHostEnvironment _env;
     private readonly ApplicationDbContext _context;
 
-    public MovieController(ApplicationDbContext context, IWebHostEnvironment env)
+    public MovieController(ApplicationDbContext context, IWebHostEnvironment env, UserManager<CustomUser> userManager)
     {
         _context = context;
         _env = env;
@@ -41,6 +44,7 @@ public class MovieController : Controller
             .Select(Path.GetFileName);
         ViewBag.ImageFiles = new SelectList(images);
         return View();
+        
     }
 
     
@@ -124,6 +128,21 @@ public class MovieController : Controller
     }
 
 
+    
+    public async Task<IActionResult> MyBookings()
+    {
+        var user = await _userManager.GetUserAsync(User);
+        var bookings = await _context.Bookings
+            .Include(b => b.Movie)
+            .Include(b => b.ShowTime)
+            .Include(b => b.Seat)
+            .Where(b => b.UserId == user.Id)
+            .ToListAsync();
+
+        return View(bookings);
+    }
+    
+    
     public async Task<IActionResult> Delete(int? id)
     {
         var movie = await _context.Movies

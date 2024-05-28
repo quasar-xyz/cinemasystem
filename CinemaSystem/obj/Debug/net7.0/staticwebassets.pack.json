@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\CinemaSystem.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\remix\\RiderProjects\\cinemasystem\\CinemaSystem\\wwwroot\\Images\\14277168_max.jpg",
+      "PackagePath": "staticwebassets\\Images\\14277168_max.jpg"
+    },
+    {
+      "Id": "C:\\Users\\remix\\RiderProjects\\cinemasystem\\CinemaSystem\\wwwroot\\Images\\37959334.5_image.png",
+      "PackagePath": "staticwebassets\\Images\\37959334.5_image.png"
+    },
+    {
       "Id": "C:\\Users\\remix\\RiderProjects\\cinemasystem\\CinemaSystem\\wwwroot\\Images\\61RhWaYBp7L._AC_UF894,1000_QL80_.jpg",
       "PackagePath": "staticwebassets\\Images\\61RhWaYBp7L._AC_UF894,1000_QL80_.jpg"
     },
