@@ -1,0 +1,23 @@
+﻿@model dynamic
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <div class="mb-3">
+    <form method="post" enctype="multipart/form-data" asp-controller="Movie" asp-action="PhotoUpload">
+        <input type="file" name="file" class="form-control"/>
+        <input type="submit" value="Upload File" class="btn btn-primary"/>
+    </form>
+    </div>
+</head>
+<body>
+<div>
+      
+</div>
+</body>
+</html>

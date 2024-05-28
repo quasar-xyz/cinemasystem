@@ -10,11 +10,13 @@ namespace CinemaSystem.Controllers;
 [Authorize(Roles = "Admin")]
 public class MovieController : Controller
 {
+    private readonly IWebHostEnvironment _env;
     private readonly ApplicationDbContext _context;
 
-    public MovieController(ApplicationDbContext context)
+    public MovieController(ApplicationDbContext context, IWebHostEnvironment env)
     {
         _context = context;
+        _env = env;
     }
 
 
@@ -41,6 +43,31 @@ public class MovieController : Controller
         return View();
     }
 
+    
+    [HttpPost]
+    public async Task<IActionResult> PhotoUpload(IFormFile file)
+    {
+        string uploadfolder = Path.Combine(_env.WebRootPath, "Images");
+        if (!Directory.Exists(uploadfolder))
+        {
+            Directory.CreateDirectory(uploadfolder);
+        }
+        string fileName = Path.GetFileName(file.FileName);
+        string filePath = Path.Combine(uploadfolder, fileName);
+      
+        using (var fileStream = new FileStream(filePath, FileMode.Create))
+        {
+            await file.CopyToAsync(fileStream);
+        }
+        
+        return View();
+    }
+    
+    
+    public async Task<IActionResult> PhotoUpload()
+    {
+        return View();
+    }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
@@ -48,11 +75,11 @@ public class MovieController : Controller
     {
         if (ModelState.IsValid)
         {
+            
             _context.Add(movie);
             await _context.SaveChangesAsync();
             movie.ImagePath = "Images/" + movie.ImagePath;
-
-
+            
             var showTime = new ShowTime
             {
                 MovieId = movie.Id,
@@ -68,7 +95,7 @@ public class MovieController : Controller
 
         return View(movie);
     }
-
+    
     public async Task<IActionResult> Edit(int? id)
     {
         var movie = await _context.Movies.FindAsync(id);

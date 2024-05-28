@@ -12,12 +12,14 @@ namespace CinemaSystem.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private readonly IWebHostEnvironment _env;
     private readonly ApplicationDbContext _context;
 
-    public HomeController(ILogger<HomeController> logger, ApplicationDbContext context)
+    public HomeController(ILogger<HomeController> logger, ApplicationDbContext context, IWebHostEnvironment env)
     {
         _logger = logger;
         _context = context;
+        _env = env;
     }
 
 
@@ -85,6 +87,27 @@ public class HomeController : Controller
         return View(movie);
     }
 
+    [HttpPost]
+    public async Task<IActionResult> Index(IFormFile file)
+    {
+        
+        string uploadfolder = Path.Combine(_env.WebRootPath, "Images");
+        if (!Directory.Exists(uploadfolder))
+        {
+            Directory.CreateDirectory(uploadfolder);
+        }
+        string fileName = Path.GetFileName(file.FileName);
+        string filePath = Path.Combine(uploadfolder, fileName);
+      
+        using (var fileStream = new FileStream(filePath, FileMode.Create))
+        {
+            await file.CopyToAsync(fileStream);
+        }
+        return View();
+    }
+    
+    
+    
     public async Task<IActionResult> Index()
     {
         var movies = await _context.Movies.ToListAsync();
