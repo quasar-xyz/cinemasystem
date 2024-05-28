@@ -9,6 +9,8 @@ public class Movie
 
     [Required]
     public string Name { get; set; }
+    
+    public string Description { get; set; }
 
     [Display(Name = "Release Date")]
     [DataType(DataType.Date)]

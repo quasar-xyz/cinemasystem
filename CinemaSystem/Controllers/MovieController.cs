@@ -44,7 +44,7 @@ public class MovieController : Controller
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create([Bind("Id,Name,ReleaseDate,ImagePath,ShowTime")] Movie movie)
+    public async Task<IActionResult> Create([Bind("Id,Name,Description,ReleaseDate,ImagePath,ShowTime")] Movie movie)
     {
         if (ModelState.IsValid)
         {
