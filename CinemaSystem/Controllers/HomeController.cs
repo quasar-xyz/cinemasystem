@@ -81,31 +81,47 @@ public class HomeController : Controller
 
     public async Task<IActionResult> DetailsMovie(int? id)
     {
+        if (id == null)
+        {
+            return NotFound();
+        }
+
         var movie = await _context.Movies
             .FirstOrDefaultAsync(m => m.Id == id);
+        if (movie == null)
+        {
+            return NotFound();
+        }
 
         return View(movie);
     }
 
+
     [HttpPost]
-    public async Task<IActionResult> Index(IFormFile file)
+    public async Task<IActionResult> Index(IFormFile file, [Bind("Name, ReleaseDate, Description")] Movie movie)
     {
-        
-        string uploadfolder = Path.Combine(_env.WebRootPath, "Images");
-        if (!Directory.Exists(uploadfolder))
+        if (file != null && file.Length > 0)
         {
-            Directory.CreateDirectory(uploadfolder);
+            string uploadFolder = Path.Combine(_env.WebRootPath, "images");
+            if (!Directory.Exists(uploadFolder))
+            {
+                Directory.CreateDirectory(uploadFolder);
+            }
+            string fileName = Path.GetFileName(file.FileName);
+            string filePath = Path.Combine(uploadFolder, fileName);
+
+            using (var fileStream = new FileStream(filePath, FileMode.Create))
+            {
+                await file.CopyToAsync(fileStream);
+            }
+
+            movie.ImagePath = "/images/" + fileName; 
+            _context.Add(movie);
+            await _context.SaveChangesAsync();
         }
-        string fileName = Path.GetFileName(file.FileName);
-        string filePath = Path.Combine(uploadfolder, fileName);
-      
-        using (var fileStream = new FileStream(filePath, FileMode.Create))
-        {
-            await file.CopyToAsync(fileStream);
-        }
-        return View();
+        return RedirectToAction(nameof(Index));
     }
-    
+
     
     
     

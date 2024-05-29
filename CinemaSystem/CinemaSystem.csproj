@@ -38,6 +38,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="Views\Home\Images\" />
       <Folder Include="wwwroot\Images\" />
     </ItemGroup>
 
