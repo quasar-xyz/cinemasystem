@@ -157,6 +157,31 @@ namespace CinemaSystem.Migrations
                     b.ToTable("Movies", (string)null);
                 });
 
+            modelBuilder.Entity("CinemaSystem.Models.Review", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Comment")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("MovieId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Rating")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MovieId");
+
+                    b.ToTable("Reviews");
+                });
+
             modelBuilder.Entity("CinemaSystem.Models.Seat", b =>
                 {
                     b.Property<int>("Id")
@@ -394,6 +419,17 @@ namespace CinemaSystem.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("CinemaSystem.Models.Review", b =>
+                {
+                    b.HasOne("CinemaSystem.Models.Movie", "Movie")
+                        .WithMany("Reviews")
+                        .HasForeignKey("MovieId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Movie");
+                });
+
             modelBuilder.Entity("CinemaSystem.Models.Seat", b =>
                 {
                     b.HasOne("CinemaSystem.Models.ShowTime", "ShowTime")
@@ -465,6 +501,11 @@ namespace CinemaSystem.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("CinemaSystem.Models.Movie", b =>
+                {
+                    b.Navigation("Reviews");
                 });
 
             modelBuilder.Entity("CinemaSystem.Models.ShowTime", b =>

@@ -8,6 +8,15 @@
     <title>Movies</title>
     <link rel="stylesheet" href="~/css/styles.css"/>
     <style>
+        body {
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
         .title-container {
             display: flex;
             justify-content: center;
@@ -16,18 +25,61 @@
 
         .admin-button {
             position: fixed;
-            top: 10px;
-            center: 5px;
+            left: 0;
+            top: 10;
+            margin: 10px;
+            gap: 10px;
         }
 
         .card {
-            position: relative;
+            background-color: #2a2a2a;
+            border: none;
+            border-radius: 10px;
             overflow: hidden;
             transition: transform 0.3s ease;
         }
 
         .card:hover {
-            transform: scale(1.05); 
+            transform: scale(1.05);
+        }
+
+        .card-img-top {
+            width: 100%;
+            height: auto;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .card-body {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .card-title {
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            margin-top: 10px;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .col-md-4 {
+            flex: 0 0 calc(33.333% - 20px);
+            max-width: calc(33.333% - 20px);
         }
     </style>
 </head>
@@ -36,28 +88,24 @@
     <div class="admin-button">
         <a asp-controller="Movie" asp-action="Index" class="btn btn-secondary">Admin</a>
         <button onclick="location.href='@Url.Action("MyBookings", "Movie")'" class="btn btn-primary">My Bookings</button>
-        
     </div>
 
     <div class="title-container">
         <h2>Movies</h2>
     </div>
-    
-    
 
-    
     <div class="row">
         @foreach (var movie in Model)
         {
-            <div class="col-md-4">
-                <div class="card mb-4 bg-dark text-white">
-                    <img src="@Url.Content(movie.ImagePath)" class="card-img-top" alt="@movie.Name">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">@movie.Name</h5>
-                        <a asp-controller="Home" asp-action="DetailsMovie" asp-route-id="@movie.Id" class="btn btn-primary">View Details</a>
-                    </div>
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <img src="@Url.Content(movie.ImagePath)" class="card-img-top" alt="@movie.Name">
+                <div class="card-body">
+                    <h5 class="card-title">@movie.Name</h5>
+                    <a asp-controller="Home" asp-action="DetailsMovie" asp-route-id="@movie.Id" class="btn btn-primary">View Details</a>
                 </div>
             </div>
+        </div>
         }
     </div>
 </div>

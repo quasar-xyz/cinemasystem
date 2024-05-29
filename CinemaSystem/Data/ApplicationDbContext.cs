@@ -17,6 +17,8 @@ public class ApplicationDbContext : IdentityDbContext<CustomUser>
     
     public DbSet<Testmodel> testmodels { get; set; }
     
+    public DbSet<Review> Reviews { get; set; }
+    
     public DbSet<Seat> Seats { get; set; }
     
     public DbSet<ShowTime> ShowTimes { get; set; }

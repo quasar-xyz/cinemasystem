@@ -1,25 +1,77 @@
 ﻿@model IEnumerable<CinemaSystem.Models.Booking>
 
-<h1>My Bookings</h1>
-
-<table class="table">
-    <thead>
-    <tr>
-        <th>Movie</th>
-        <th>Show Time</th>
-        <th>Seat</th>
-        <th>Booking Date</th>
-    </tr>
-    </thead>
-    <tbody>
-    @foreach (var booking in Model)
-    {
+<div class="container">
+    <h2>My Bookings</h2>
+    <table>
+        <thead>
         <tr>
-            <td>@booking.Movie.Name</td>
-            <td>@booking.ShowTime.StartTime - @booking.ShowTime.EndTime</td>
-            <td>@booking.Seat.Id</td>
-            <td>@booking.BookingDate</td>
+            <th>Movie ID</th>
+            <th>Booking Date</th>
+            <th>Action</th>
         </tr>
+        </thead>
+        <tbody>
+        @foreach (var booking in Model)
+        {
+        <tr>
+            <td>@booking.MovieId</td>
+            <td>@booking.BookingDate.ToString("g")</td>
+            <td>
+                <form method="post" asp-action="DeleteBooking" asp-controller="Movie" asp-route-id="@booking.Id">
+                    <input type="submit" value="Delete" class="delete-button" />
+                </form>
+            </td>
+        </tr>
+        }
+        </tbody>
+    </table>
+</div>
+
+<style>
+    body {
+        background-color: #343333; 
+        color: #fff; 
     }
-    </tbody>
-</table>
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #333; 
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    .delete-button {
+        background-color: #f44336;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+</style>

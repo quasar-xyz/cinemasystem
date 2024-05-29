@@ -1,4 +1,5 @@
-﻿using CinemaSystem.Data;
+﻿using System.Security.Claims;
+using CinemaSystem.Data;
 using CinemaSystem.Data.Identity;
 using CinemaSystem.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -31,12 +32,21 @@ public class MovieController : Controller
 
     public async Task<IActionResult> Details(int? id)
     {
+        
         var movie = await _context.Movies
+            .Include(m => m.Reviews) 
             .FirstOrDefaultAsync(m => m.Id == id);
+
+        if (movie == null)
+        {
+            return NotFound();
+        }
 
         return View(movie);
     }
 
+    
+    
 
     public IActionResult Create()
     {
@@ -75,7 +85,7 @@ public class MovieController : Controller
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create([Bind("Id,Name,Description,ReleaseDate,ImagePath,ShowTime")] Movie movie)
+    public async Task<IActionResult> Create([Bind("Id,Name,Description,ReleaseDate,ImagePath,ShowTime,Review")] Movie movie)
     {
         if (ModelState.IsValid)
         {
@@ -88,7 +98,7 @@ public class MovieController : Controller
             {
                 MovieId = movie.Id,
                 StartTime = DateTime.Now,
-                EndTime = DateTime.Now.AddHours(3)
+                EndTime = DateTime.Now.AddHours(3),
             };
 
             _context.Add(showTime);
@@ -106,6 +116,20 @@ public class MovieController : Controller
         return View(movie);
     }
 
+    
+    
+    [HttpPost]
+    public IActionResult AddReview(CinemaSystem.Models.Review review)
+    {
+        
+        _context.Reviews.Add(review);
+        _context.SaveChanges();
+        
+        var movie = _context.Movies.Include(m => m.Reviews).Single(m => m.Id == review.MovieId);
+        _context.SaveChanges();
+
+        return RedirectToAction(nameof(HomeController.Index), "Home");
+    }
 
     [HttpPost]
     public async Task<IActionResult> Edit(int id, [Bind("Id,Name,ReleaseDate")] Movie movie)
@@ -131,17 +155,30 @@ public class MovieController : Controller
     
     public async Task<IActionResult> MyBookings()
     {
-        var user = await _userManager.GetUserAsync(User);
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
         var bookings = await _context.Bookings
             .Include(b => b.Movie)
-            .Include(b => b.ShowTime)
-            .Include(b => b.Seat)
-            .Where(b => b.UserId == user.Id)
+            .Where(b => b.UserId == userId)
             .ToListAsync();
 
         return View(bookings);
     }
     
+    
+    [HttpPost]
+    public async Task<IActionResult> DeleteBooking(int id)
+    {
+        var booking = await _context.Bookings.FindAsync(id);
+        if (booking == null)
+        {
+            return NotFound();
+        }
+
+        _context.Bookings.Remove(booking);
+        await _context.SaveChangesAsync();
+
+        return RedirectToAction(nameof(MyBookings));
+    }
     
     public async Task<IActionResult> Delete(int? id)
     {

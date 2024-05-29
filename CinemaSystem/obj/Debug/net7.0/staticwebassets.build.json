@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "vFHrt+973suDjeWN9zLOSnGx9Maf9Qnonf92LiEakfw=",
+  "Hash": "SUjn526x3t59ML4CmWOH4bjSQH3zBA+D2cr3/Cr+D8k=",
   "Source": "CinemaSystem",
   "BasePath": "_content/CinemaSystem",
   "Mode": "Default",
@@ -1250,6 +1250,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\remix\\RiderProjects\\cinemasystem\\CinemaSystem\\wwwroot\\Images\\1424-1000x830.jpg",
+      "SourceId": "CinemaSystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\remix\\RiderProjects\\cinemasystem\\CinemaSystem\\wwwroot\\",
+      "BasePath": "_content/CinemaSystem",
+      "RelativePath": "Images/1424-1000x830.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\1424-1000x830.jpg"
     },
     {
       "Identity": "C:\\Users\\remix\\RiderProjects\\cinemasystem\\CinemaSystem\\wwwroot\\Images\\14277168_max.jpg",

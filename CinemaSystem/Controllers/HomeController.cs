@@ -56,7 +56,8 @@ public class HomeController : Controller
             UserId = userId,
             SeatId = seat.Id,
             ShowTimeId = showTime.Id,
-            MovieId = showTime.MovieId
+            MovieId = showTime.MovieId,
+            BookingDate = DateTime.Now
         };
 
         _context.Add(booking);
@@ -65,6 +66,9 @@ public class HomeController : Controller
         return RedirectToAction(nameof(MyBookings));
     }
 
+    
+    
+    
 
     [Authorize]
     public async Task<IActionResult> MyBookings()
@@ -81,17 +85,12 @@ public class HomeController : Controller
 
     public async Task<IActionResult> DetailsMovie(int? id)
     {
-        if (id == null)
-        {
-            return NotFound();
-        }
+      
 
         var movie = await _context.Movies
+            .Include(m => m.Reviews)
             .FirstOrDefaultAsync(m => m.Id == id);
-        if (movie == null)
-        {
-            return NotFound();
-        }
+      
 
         return View(movie);
     }

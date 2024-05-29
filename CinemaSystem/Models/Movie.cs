@@ -11,6 +11,9 @@ public class Movie
     public string Name { get; set; }
     
     public string Description { get; set; }
+    
+    
+    public ICollection<Review>? Reviews { get; set; }
 
     [Display(Name = "Release Date")]
     [DataType(DataType.Date)]
